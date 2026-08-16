@@ -148,13 +148,13 @@
             <div class="single-pkg-card">
                 <div class="badge">🔥 LIFETIME DEAL</div>
                 <div class="pkg-price">
-                    <span>৳160</span>
+                    <span>৳145</span>
                 </div>
                 <div class="pkg-renders">Unlimited Renders & Downloads</div>
                 <div class="pkg-method">bKash / Nagad Accepted</div>
             </div>
             <div class="payment-form" id="pay-form-container">
-                <div class="instruction">Send exactly <span class="instruction-amount">৳160</span> via bKash/Nagad to:</div>
+                <div class="instruction">Send exactly <span class="instruction-amount">৳145</span> via bKash/Nagad to:</div>
                 <div class="bkash-num">01646348167 <span style="font-size:12px; color:var(--text-muted); font-weight:normal;">(Personal)</span></div>
                 <div class="input-group-row">
                     <div class="input-box" style="margin-bottom:10px;">
@@ -238,14 +238,14 @@
 
     <!-- FIREBASE AUTH & PAYMENT LOGIC -->
     <script>
-        // আপনার ফায়ারবেস কনফিগারেশন এখানে বসান
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyCMeW0JaAtyIZ7OT2Unw0vPlsWWjrFpgTw",
+            authDomain: "chstsmas.firebaseapp.com",
+            projectId: "chstsmas",
+            storageBucket: "chstsmas.firebasestorage.app",
+            messagingSenderId: "829408087202",
+            appId: "1:829408087202:web:0ad6bd3c5d4b16441b5bfb",
+            measurementId: "G-CZ66SSGR2P"
         };
         
         if (!firebase.apps.length) {
@@ -275,13 +275,12 @@
                             name: user.displayName,
                             email: user.email,
                             photo: user.photoURL,
-                            isPaid: false, // Default is unpaid
+                            isPaid: false,
                             joinedAt: firebase.firestore.FieldValue.serverTimestamp()
                         });
                     }
                 });
                 
-                // Listen for payment approval (Admin changes isPaid to true)
                 userRef.onSnapshot(doc => {
                     if (doc.exists) {
                         let data = doc.data();
@@ -351,7 +350,7 @@
             let depositData = {
                 senderAccount: sender,
                 transactionId: trxid,
-                amount: "৳160",
+                amount: "৳145",
                 userEmail: currentUser ? currentUser.email : "Anon",
                 userName: currentUser ? currentUser.displayName : "Guest",
                 userId: currentUser ? currentUser.uid : "N/A",
